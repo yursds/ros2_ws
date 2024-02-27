@@ -99,6 +99,10 @@ talker: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
 talker: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so
 talker: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
 talker: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_py.so
+talker: /opt/ros/humble/lib/x86_64-linux-gnu/libpinocchio.so
+talker: /lib/x86_64-linux-gnu/libboost_filesystem.so
+talker: /lib/x86_64-linux-gnu/libboost_serialization.so
+talker: /lib/x86_64-linux-gnu/libboost_system.so
 talker: /opt/ros/humble/lib/liblibstatistics_collector.so
 talker: /opt/ros/humble/lib/librcl.so
 talker: /opt/ros/humble/lib/librmw_implementation.so

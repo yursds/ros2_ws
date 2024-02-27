@@ -64,6 +64,12 @@ Boost_PYTHON310_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_python
 //Boost python310 library (release)
 Boost_PYTHON310_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_python310.so
 
+//Boost python library (debug)
+Boost_PYTHON_LIBRARY_DEBUG:FILEPATH=Boost_PYTHON_LIBRARY_DEBUG-NOTFOUND
+
+//Boost python library (release)
+Boost_PYTHON_LIBRARY_RELEASE:FILEPATH=Boost_PYTHON_LIBRARY_RELEASE-NOTFOUND
+
 //Boost serialization library (debug)
 Boost_SERIALIZATION_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_serialization.so
 
@@ -312,6 +318,9 @@ PYTHON_DEB_LAYOUT:BOOL=OFF
 
 //Enable standard Python package layout
 PYTHON_STANDARD_LAYOUT:BOOL=OFF
+
+//The directory containing a CMake configuration file for Python310.
+Python310_DIR:PATH=Python310_DIR-NOTFOUND
 
 //Name of the computer/site where compile is being run
 SITE:STRING=caosmachina
@@ -606,6 +615,10 @@ Boost_LIBRARY_DIR_RELEASE-ADVANCED:INTERNAL=1
 Boost_PYTHON310_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_PYTHON310_LIBRARY_RELEASE
 Boost_PYTHON310_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_PYTHON_LIBRARY_DEBUG
+Boost_PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_PYTHON_LIBRARY_RELEASE
+Boost_PYTHON_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_SERIALIZATION_LIBRARY_DEBUG
 Boost_SERIALIZATION_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_SERIALIZATION_LIBRARY_RELEASE
@@ -784,7 +797,7 @@ PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //Components requested for this build tree.
-_Boost_COMPONENTS_SEARCHED:INTERNAL=chrono;filesystem;python310;serialization;system
+_Boost_COMPONENTS_SEARCHED:INTERNAL=chrono;filesystem;python;python310;serialization;system
 //Last used Boost_INCLUDE_DIR value.
 _Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/include
 //Last used Boost_LIBRARY_DIR_DEBUG value.
