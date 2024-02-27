@@ -43,8 +43,20 @@ public:
 private:
   void timer_callback()
   {
+
+    pinocchio::Model model;
+    pinocchio::buildModels::manipulator(model);
+    pinocchio::Data data(model);
+
+    Eigen::VectorXd q = pinocchio::neutral(model);
+    Eigen::VectorXd v = Eigen::VectorXd::Zero(model.nv);
+    Eigen::VectorXd a = Eigen::VectorXd::Zero(model.nv);
+
+    const Eigen::VectorXd & tau = pinocchio::rnea(model,data,q,v,a);
+    std::cout << "tau = " << tau.transpose() << std::endl;
+    
     auto message = std_msgs::msg::String();
-    message.data = "Hello, world! " + std::to_string(count_++);
+    message.data = "Hello, world! " + std::to_string(count_++) + std::to_string(tau[0]);
     RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", message.data.c_str());
     publisher_->publish(message);
   }
@@ -58,17 +70,6 @@ int main(int argc, char * argv[])
   rclcpp::init(argc, argv);
   rclcpp::spin(std::make_shared<MinimalPublisher>());
   rclcpp::shutdown();
-
-  pinocchio::Model model;
-  pinocchio::buildModels::manipulator(model);
-  pinocchio::Data data(model);
-
-  Eigen::VectorXd q = pinocchio::neutral(model);
-  Eigen::VectorXd v = Eigen::VectorXd::Zero(model.nv);
-  Eigen::VectorXd a = Eigen::VectorXd::Zero(model.nv);
-
-  const Eigen::VectorXd & tau = pinocchio::rnea(model,data,q,v,a);
-  std::cout << "tau = " << tau.transpose() << std::endl;
 
   return 0;
 }
