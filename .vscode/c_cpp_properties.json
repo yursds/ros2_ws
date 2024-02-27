@@ -2,7 +2,10 @@
     "configurations": [
       {
         "name": "Linux",
-        "includePath": ["${workspaceFolder}/**", "/opt/ros/humble/include"],
+        "includePath": ["${workspaceFolder}/**", 
+                        "/opt/ros/humble/include/**",
+                        "/opt/ros/humble/lib/**"
+                    ],
         "defines": [],
         "compilerPath": "/usr/bin/gcc",
         "cStandard": "c11",
